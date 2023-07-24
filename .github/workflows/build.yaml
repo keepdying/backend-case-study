@@ -1,12 +1,13 @@
 name: Build Docker Image for Deployment
 
 on:
-  push:
-    branches:
-      - "main"
-  pull_request:
-    branches:
-      - "main"
+  # TODO: Enable this for production
+  # push:
+  #   branches:
+  #     - "main"
+  # pull_request:
+  #   branches:
+  #     - "main"
   workflow_dispatch:
     
 

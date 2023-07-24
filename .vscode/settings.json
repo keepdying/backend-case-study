@@ -1,0 +1,6 @@
+{
+  "yaml.schemas": {
+    "https://json.schemastore.org/kustomization.json": "file:///Users/emrec/Projects/codeway-case/k8s/deployment.yaml",
+    "https://json.schemastore.org/github-action.json": "file:///Users/emrec/Projects/codeway-case/.github/workflows/deploy.yaml"
+  }
+}
