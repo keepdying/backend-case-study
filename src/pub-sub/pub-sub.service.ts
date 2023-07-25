@@ -1,6 +1,5 @@
 import { PubSub } from '@google-cloud/pubsub';
 import { Injectable } from '@nestjs/common';
-import { callbackify } from 'util';
 
 @Injectable()
 export class PubSubService {
