@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analytics-endpoint
+spec:
+  selector:
+    matchLabels:
+      app: analytics-endpoint
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: analytics-endpoint
+    spec:
+      volumes:
+      - name: google-cloud-key
+        secret:
+          secretName: pubsub-key
+      containers:
+      - name: analytics-endpoint
+        image: analytics-endpoint:latest
+        ports:
+          - containerPort: 3000
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: google-cloud-key
+          mountPath: /var/secrets/google
+        env:
+        - name: GOOGLE_APPLICATION_CREDENTIALS
+          value: /var/secrets/google/key.json
+        - name: BIGQUERY_TABLE_NAME
+          value: analytics.events
