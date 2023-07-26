@@ -18,11 +18,11 @@ The API is built using NestJS. The API is containerized using Docker and deploye
 
 For this case study, I have chosen to use the following architecture:
 
-![Architecture](https://github.com/keepdying/codeway-case/assets/10383811/5fb75f8f-7c23-4e04-b342-42dfa0683983)
+![Architecture](https://raw.githubusercontent.com/keepdying/codeway-case/main/proposed_architecture.png)
 
 For the sake of simplicity, The API exposed to Internet behind a LoadBalancer. In a real production environment, The API would be behind an API gateway for such Authentication and Authorization purposes. The API gateway would also be responsible for routing the requests to the appropriate microservice.
 
-For incoming requests, API publishes event logs to Google Pub/Sub which is a fully managed real-time messaging service that allows to send and receive messages between independent applications. Then I pipelined the event logs from Pub/Sub directly to Google BigQuery.
+For incoming requests, API publishes event logs to Google Pub/Sub which is a fully managed real-time messaging service that allows to send and receive messages between independent applications. Using a real-time messaging service ensures that we do not lose any message. Event logs are pipelined from Pub/Sub directly to Google BigQuery.
 
 For outgoing requests, the API queries the data from BigQuery and returns the results to the client.
 
