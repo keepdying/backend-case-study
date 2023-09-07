@@ -1,6 +1,6 @@
-# Codeway Backend Case Study
+# Backend Case Study
 
-This repository contains the source code for the Codeway case study. The case study is to implement an API that can handle event logs from various clients and store them in Google BigQuery. Then the API should be able to query the data from BigQuery and return the results for analytic purposes.
+This repository contains the source code for a backend case study. The case study aims to implement an API that can handle event logs from various clients and store them in Google BigQuery. Then the API should be able to query the data from BigQuery and return the results for analytic purposes.
 
 ## Tech Stack
 
